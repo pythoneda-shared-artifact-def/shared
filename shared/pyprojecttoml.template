@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "@pname@"
+version = "@version@"
+description = "@desc@"
+authors = [ @authors@ ]
+readme = "README.md"
+homepage = "@homepage@"
+packages = [{include = "@package@"}]
+
+[tool.poetry.dependencies]
+python = "^@pythonMajorMinorVersion@"
+pythoneda-shared-artifact-changes-events = "^@pythonedaSharedArtifactChangesEvents@"
+pythoneda-shared-git-shared = "^@pythonedaSharedGitShared@"
+pythoneda-shared-pythoneda-domain = "^@pythonedaSharedPythonedaDomain@"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
