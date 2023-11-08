@@ -21,7 +21,7 @@
   inputs = rec {
     flake-utils.url = "github:numtide/flake-utils/v1.0.0";
     nixos.url = "github:NixOS/nixpkgs/nixos-23.05";
-    pythoneda-shared-artifact-changes-events = {
+    pythoneda-shared-artifact-events = {
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixos.follows = "nixos";
       inputs.pythoneda-shared-code-requests-events.follows =
@@ -32,8 +32,7 @@
         "pythoneda-shared-pythoneda-banner";
       inputs.pythoneda-shared-pythoneda-domain.follows =
         "pythoneda-shared-pythoneda-domain";
-      url =
-        "github:pythoneda-shared-artifact-changes/events-artifact/0.0.4?dir=events";
+      url = "github:pythoneda-shared-artifact/events-artifact/0.0.5?dir=events";
     };
     pythoneda-shared-git-shared = {
       inputs.flake-utils.follows = "flake-utils";
@@ -103,8 +102,8 @@
       let
         org = "pythoneda-shared-artifact";
         repo = "shared";
-        version = "0.0.1";
-        sha256 = "13996xiisiqb330lpr9wxr8515gasnp5fb2byw5ka0fyh8xi3dgk";
+        version = "0.0.2";
+        sha256 = "0q8fga6gnmywmavc346bzgx5iai74g7q31z1gzpslhpsbpphw336";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.shared.artifact";
         pkgs = import nixos { inherit system; };
@@ -121,8 +120,8 @@
           builtins.replaceStrings [ "\n" ] [ "" ] "nixos-${nixosVersion}";
         shared = import "${pythoneda-shared-pythoneda-banner}/nix/shared.nix";
         pythoneda-shared-artifact-shared-for = { python
-          , pythoneda-shared-artifact-changes-events
-          , pythoneda-shared-git-shared, pythoneda-shared-pythoneda-domain }:
+          , pythoneda-shared-artifact-events, pythoneda-shared-git-shared
+          , pythoneda-shared-pythoneda-domain }:
           let
             pnameWithUnderscores =
               builtins.replaceStrings [ "-" ] [ "_" ] pname;
@@ -143,8 +142,8 @@
               inherit homepage pname pythonMajorMinorVersion pythonpackage
                 version;
               package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
-              pythonedaSharedArtifactChangesEvents =
-                pythoneda-shared-artifact-changes-events.version;
+              pythonedaSharedArtifactEvents =
+                pythoneda-shared-artifact-events.version;
               pythonedaSharedGitShared = pythoneda-shared-git-shared.version;
               pythonedaSharedPythonedaDomain =
                 pythoneda-shared-pythoneda-domain.version;
@@ -160,7 +159,7 @@
 
             nativeBuildInputs = with python.pkgs; [ pip pkgs.jq poetry-core ];
             propagatedBuildInputs = with python.pkgs; [
-              pythoneda-shared-artifact-changes-events
+              pythoneda-shared-artifact-events
               pythoneda-shared-git-shared
               pythoneda-shared-pythoneda-domain
             ];
@@ -254,8 +253,8 @@
           pythoneda-shared-artifact-shared-python38 =
             pythoneda-shared-artifact-shared-for {
               python = pkgs.python38;
-              pythoneda-shared-artifact-changes-events =
-                pythoneda-shared-artifact-changes-events.packages.${system}.pythoneda-shared-artifact-changes-events-python38;
+              pythoneda-shared-artifact-events =
+                pythoneda-shared-artifact-events.packages.${system}.pythoneda-shared-artifact-events-python38;
               pythoneda-shared-git-shared =
                 pythoneda-shared-git-shared.packages.${system}.pythoneda-shared-git-shared-python38;
               pythoneda-shared-pythoneda-domain =
@@ -264,8 +263,8 @@
           pythoneda-shared-artifact-shared-python39 =
             pythoneda-shared-artifact-shared-for {
               python = pkgs.python39;
-              pythoneda-shared-artifact-changes-events =
-                pythoneda-shared-artifact-changes-events.packages.${system}.pythoneda-shared-artifact-changes-events-python39;
+              pythoneda-shared-artifact-events =
+                pythoneda-shared-artifact-events.packages.${system}.pythoneda-shared-artifact-events-python39;
               pythoneda-shared-git-shared =
                 pythoneda-shared-git-shared.packages.${system}.pythoneda-shared-git-shared-python39;
               pythoneda-shared-pythoneda-domain =
@@ -274,8 +273,8 @@
           pythoneda-shared-artifact-shared-python310 =
             pythoneda-shared-artifact-shared-for {
               python = pkgs.python310;
-              pythoneda-shared-artifact-changes-events =
-                pythoneda-shared-artifact-changes-events.packages.${system}.pythoneda-shared-artifact-changes-events-python310;
+              pythoneda-shared-artifact-events =
+                pythoneda-shared-artifact-events.packages.${system}.pythoneda-shared-artifact-events-python310;
               pythoneda-shared-git-shared =
                 pythoneda-shared-git-shared.packages.${system}.pythoneda-shared-git-shared-python310;
               pythoneda-shared-pythoneda-domain =
@@ -284,8 +283,8 @@
           pythoneda-shared-artifact-shared-python311 =
             pythoneda-shared-artifact-shared-for {
               python = pkgs.python311;
-              pythoneda-shared-artifact-changes-events =
-                pythoneda-shared-artifact-changes-events.packages.${system}.pythoneda-shared-artifact-changes-events-python311;
+              pythoneda-shared-artifact-events =
+                pythoneda-shared-artifact-events.packages.${system}.pythoneda-shared-artifact-events-python311;
               pythoneda-shared-git-shared =
                 pythoneda-shared-git-shared.packages.${system}.pythoneda-shared-git-shared-python311;
               pythoneda-shared-pythoneda-domain =
