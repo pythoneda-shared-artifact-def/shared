@@ -29,6 +29,7 @@ packages = [{include = "@package@"}]
 python = "^@pythonMajorMinorVersion@"
 pythoneda-shared-artifact-events = "^@pythonedaSharedArtifactEvents@"
 pythoneda-shared-git-shared = "^@pythonedaSharedGitShared@"
+pythoneda-shared-nix-flake-shared = "^@pythonedaSharedNixFlakeShared@"
 pythoneda-shared-pythoneda-domain = "^@pythonedaSharedPythonedaDomain@"
 
 [build-system]
