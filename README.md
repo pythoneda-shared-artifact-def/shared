@@ -1,10 +1,10 @@
-# shared-artifact
+# Shared kernel
 
-Artifact space for pythoneda-shared-artifact/shared
+Definition of [https://github.com/pythoneda-shared-artifact/shared](pythoneda-shared-artifact/shared).
 
 ## How to declare it in your flake
 
-Check the latest tag of the artifact repository: [https://github.com/pythoneda-shared-artifact/shared-artifact/tags](https://github.com/pythoneda-shared-artifact/shared-artifact/tags) and use it instead of the `[version]` placeholder below.
+Check the latest tag of this artifact repository and use it instead of the `[version]` placeholder below.
 
 ```nix
 {
@@ -14,7 +14,7 @@ Check the latest tag of the artifact repository: [https://github.com/pythoneda-s
     pythoneda-shared-artifact-shared = {
       [optional follows]
       url =
-        "github:pythoneda-shared-artifact/shared-artifact/[version]?dir=shared";
+        "github:pythoneda-shared-artifact-def/shared/[version]";
     };
   };
   outputs = [..]
@@ -29,6 +29,3 @@ Use the specific package depending on your system (one of `flake-utils.lib.defau
 - `#packages.[system].pythoneda-shared-artifact-shared-python39` 
 - `#packages.[system].pythoneda-shared-artifact-shared-python310` 
 - `#packages.[system].pythoneda-shared-artifact-shared-python311` 
-
-The Nix flake is under the 
-[infrastructure](https://github.com/pythoneda-shared-artifact/shared-artifact/tree/main/shared "shared") folder in <https://github.com/pythoneda-shared-artifact/shared-artifact>.
