@@ -67,8 +67,8 @@
       let
         org = "pythoneda-shared-artifact";
         repo = "shared";
-        version = "0.0.6";
-        sha256 = "0jbj1r0glggk1dpbaqwq7mwx5z3wjl5k8y7lxkgglwwzz3rasg0b";
+        version = "0.0.7";
+        sha256 = "0ydsdcmny9xbd5a6xlhnsi1lrgl5q074g302cakcnl7vxs61vl2d";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.shared.artifact";
         pkgs = import nixos { inherit system; };
