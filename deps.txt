@@ -1,0 +1,73 @@
+digraph "file:///home/chous/github/pythoneda-def/pythoneda-shared-artifact-def/shared" {
+  rankdir=LR;
+  compound=true;
+  label="file:///home/chous/github/pythoneda-def/pythoneda-shared-artifact-def/shared";
+
+  // root node
+  root [label="inputs", shape="circle", fillcolor="#F9F7F3", color="black", fontcolor="black", fixedsize="false"];
+
+  // direct inputs with no duplicates
+  node [shape="egg", style="filled", fontcolor="black", color="#B5E2FA", fillcolor="#B5E2FA"];
+  flakeUtils [label="flake-utils\nv1.0.0"]; 
+  nixos [label="nixos\nnixos-23.05"]; 
+  pythonedaSharedArtifactEvents [label="pythoneda-shared-artifact-events\n0.0.9"]; 
+  pythonedaSharedNixFlakeShared [label="pythoneda-shared-nix-flake-shared\n0.0.10"]; 
+  pythonedaSharedPythonedaBanner [label="pythoneda-shared-pythoneda-banner\n0.0.27"]; 
+  pythonedaSharedPythonedaDomain [label="pythoneda-shared-pythoneda-domain\n0.0.3"]; 
+
+  // direct inputs with duplicates with the same version
+  node [shape="egg", style="filled", fontcolor="white", color="#0FA3B1", fillcolor="#0FA3B1"];
+  pythonedaSharedGitShared [label="pythoneda-shared-git-shared\n0.0.8"]; 
+
+  // direct inputs with duplicates with different versions
+  node [shape="egg", style="filled", fontcolor="white", color="#89023E", fillcolor="#89023E"];
+
+
+  // indirect inputs with no duplicates
+  node [shape="rectangle", style="filled", fontcolor="black", color="#EDDEA4", fillcolor="#EDDEA4"];
+  stringtemplate3 [label="stringtemplate3\nstringtemplate3-3.1"]; 
+
+  // indirect inputs with duplicates with the same version
+  node [shape="rectangle", style="filled", fontcolor="black", color="#F7A072", fillcolor="#F7A072"];
+  pythonedaSharedGitShared_2 [label="pythoneda-shared-git-shared\n0.0.8"]; 
+
+  // indirect inputs with duplicates with different versions
+  node [shape="rectangle", style="filled", fontcolor="black", color="#C08497", fillcolor="#C08497"];
+
+
+  root -> flakeUtils [color="#656D4A"]; 
+  root -> nixos [color="#656D4A"]; 
+  root -> pythonedaSharedArtifactEvents [color="#656D4A"]; 
+  root -> pythonedaSharedGitShared [color="#656D4A"]; 
+  root -> pythonedaSharedNixFlakeShared [color="#656D4A"]; 
+  root -> pythonedaSharedPythonedaBanner [color="#656D4A"]; 
+  root -> pythonedaSharedPythonedaDomain [color="#656D4A"]; 
+
+  pythonedaSharedArtifactEvents -> flakeUtils [color="#A4AC86"]; 
+  pythonedaSharedArtifactEvents -> nixos [color="#A4AC86"]; 
+  pythonedaSharedArtifactEvents -> pythonedaSharedPythonedaBanner [color="#A4AC86"]; 
+  pythonedaSharedArtifactEvents -> pythonedaSharedPythonedaDomain [color="#A4AC86"]; 
+  pythonedaSharedGitShared -> flakeUtils [color="#A4AC86"]; 
+  pythonedaSharedGitShared -> nixos [color="#A4AC86"]; 
+  pythonedaSharedGitShared -> pythonedaSharedPythonedaBanner [color="#A4AC86"]; 
+  pythonedaSharedGitShared -> pythonedaSharedPythonedaDomain [color="#A4AC86"]; 
+  pythonedaSharedNixFlakeShared -> flakeUtils [color="#A4AC86"]; 
+  pythonedaSharedNixFlakeShared -> nixos [color="#A4AC86"]; 
+  pythonedaSharedNixFlakeShared -> pythonedaSharedGitShared_2 [color="#A4AC86"]; 
+  pythonedaSharedNixFlakeShared -> pythonedaSharedPythonedaBanner [color="#A4AC86"]; 
+  pythonedaSharedNixFlakeShared -> pythonedaSharedPythonedaDomain [color="#A4AC86"]; 
+  pythonedaSharedNixFlakeShared -> stringtemplate3 [color="#A4AC86"]; 
+  pythonedaSharedPythonedaBanner -> flakeUtils [color="#A4AC86"]; 
+  pythonedaSharedPythonedaBanner -> nixos [color="#A4AC86"]; 
+  pythonedaSharedPythonedaDomain -> flakeUtils [color="#A4AC86"]; 
+  pythonedaSharedPythonedaDomain -> nixos [color="#A4AC86"]; 
+  pythonedaSharedPythonedaDomain -> pythonedaSharedPythonedaBanner [color="#A4AC86"]; 
+  pythonedaSharedGitShared_2 -> flakeUtils [color="#A4AC86"]; 
+  pythonedaSharedGitShared_2 -> nixos [color="#A4AC86"]; 
+  pythonedaSharedGitShared_2 -> pythonedaSharedPythonedaBanner [color="#A4AC86"]; 
+  pythonedaSharedGitShared_2 -> pythonedaSharedPythonedaDomain [color="#A4AC86"]; 
+  stringtemplate3 -> flakeUtils [color="#A4AC86"]; 
+  stringtemplate3 -> nixos [color="#A4AC86"]; 
+
+  pythonedaSharedGitShared -> pythonedaSharedGitShared_2 [style=dotted, dir=both, color="#414833"]; 
+}
