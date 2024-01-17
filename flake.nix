@@ -28,7 +28,7 @@
         "pythoneda-shared-banner";
       inputs.pythoneda-shared-domain.follows =
         "pythoneda-shared-domain";
-      url = "github:pythoneda-shared-artifact-def/events/0.0.29";
+      url = "github:pythoneda-shared-artifact-def/events/0.0.30";
     };
     pythoneda-shared-git-shared = {
       inputs.flake-utils.follows = "flake-utils";
@@ -37,7 +37,7 @@
         "pythoneda-shared-banner";
       inputs.pythoneda-shared-domain.follows =
         "pythoneda-shared-domain";
-      url = "github:pythoneda-shared-git-def/shared/0.0.28";
+      url = "github:pythoneda-shared-git-def/shared/0.0.29";
     };
     pythoneda-shared-nix-flake-shared = {
       inputs.flake-utils.follows = "flake-utils";
@@ -46,19 +46,19 @@
         "pythoneda-shared-banner";
       inputs.pythoneda-shared-domain.follows =
         "pythoneda-shared-domain";
-      url = "github:pythoneda-shared-nix-flake-def/shared/0.0.30";
+      url = "github:pythoneda-shared-nix-flake-def/shared/0.0.31";
     };
     pythoneda-shared-banner = {
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixos.follows = "nixos";
-      url = "github:pythoneda-shared-def/banner/0.0.43";
+      url = "github:pythoneda-shared-def/banner/0.0.46";
     };
     pythoneda-shared-domain = {
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixos.follows = "nixos";
       inputs.pythoneda-shared-banner.follows =
         "pythoneda-shared-banner";
-      url = "github:pythoneda-shared-def/domain/0.0.25";
+      url = "github:pythoneda-shared-def/domain/0.0.26";
     };
   };
   outputs = inputs:
@@ -67,8 +67,8 @@
       let
         org = "pythoneda-shared-artifact";
         repo = "shared";
-        version = "0.0.11";
-        sha256 = "1zkd61xn5djvqc4x9jfch0ccn040vmhznlpclvzxxs4lvn1g5yj3";
+        version = "0.0.12";
+        sha256 = "1cm00b5cm7hq7r49fw725rj63s4i0f7fqrq8bbn8f26yz5c5w589";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.shared.artifact";
         pkgs = import nixos { inherit system; };
