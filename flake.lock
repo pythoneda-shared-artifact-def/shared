@@ -195,16 +195,16 @@
         "stringtemplate3": "stringtemplate3"
       },
       "locked": {
-        "lastModified": 1705523900,
-        "narHash": "sha256-6ukwxhw5Rd6/d4n+R6Fu/s4wSc/I+/4vy1l0jS1NfB8=",
+        "lastModified": 1705947554,
+        "narHash": "sha256-OURknelVgQ/Wtc1tOxWEK7WS0Y82y7XghWWDgSQpugI=",
         "owner": "pythoneda-shared-nix-flake-def",
         "repo": "shared",
-        "rev": "447321f1234b65d612f58b09ba44fe2443773f2e",
+        "rev": "65a043f3e605133d53e5d315158eb88d8085a260",
         "type": "github"
       },
       "original": {
         "owner": "pythoneda-shared-nix-flake-def",
-        "ref": "0.0.33",
+        "ref": "0.0.34",
         "repo": "shared",
         "type": "github"
       }
